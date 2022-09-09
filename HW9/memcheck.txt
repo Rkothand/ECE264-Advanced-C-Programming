@@ -1,0 +1,153 @@
+==4942== Memcheck, a memory error detector
+==4942== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==4942== Using Valgrind-3.15.0-608cb11914-20190413 and LibVEX; rerun with -h for copyright info
+==4942== Command: ./hw09 inputs/input1 output1
+==4942== Parent PID: 4941
+==4942== 
+--4942-- 
+--4942-- Valgrind options:
+--4942--    --tool=memcheck
+--4942--    --log-file=memcheck.txt
+--4942--    --leak-check=full
+--4942--    --verbose
+--4942-- Contents of /proc/version:
+--4942--   Linux version 3.10.0-1127.8.2.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-39) (GCC) ) #1 SMP Tue May 12 16:57:42 UTC 2020
+--4942-- 
+--4942-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand
+--4942-- Page sizes: currently 4096, max supported 4096
+--4942-- Valgrind library directory: /usr/libexec/valgrind
+--4942-- Reading syms from /home/shay/a/rkothand/Desktop/HW9/hw09
+--4942-- Reading syms from /usr/lib64/ld-2.17.so
+--4942--   Considering /usr/lib/debug/.build-id/27/ffd1fbc69569c776e666474eed723395e6d727.debug ..
+--4942--   .. build-id is valid
+--4942-- Reading syms from /usr/libexec/valgrind/memcheck-amd64-linux
+--4942--    object doesn't have a symbol table
+--4942--    object doesn't have a dynamic symbol table
+--4942-- Scheduler: using generic scheduler lock implementation.
+--4942-- Reading suppressions file: /usr/libexec/valgrind/default.supp
+==4942== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-4942-by-rkothand-on-ecegrid-thin7.ecn.purdue.edu
+==4942== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-4942-by-rkothand-on-ecegrid-thin7.ecn.purdue.edu
+==4942== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-4942-by-rkothand-on-ecegrid-thin7.ecn.purdue.edu
+==4942== 
+==4942== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==4942== don't want to do, unless you know exactly what you're doing,
+==4942== or are doing some strange experiment):
+==4942==   /usr/libexec/valgrind/../../bin/vgdb --pid=4942 ...command...
+==4942== 
+==4942== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==4942==   /path/to/gdb ./hw09
+==4942== and then give GDB the following command
+==4942==   target remote | /usr/libexec/valgrind/../../bin/vgdb --pid=4942
+==4942== --pid is optional if only one valgrind process is running
+==4942== 
+--4942-- REDIR: 0x4019e30 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c7ed5 (???)
+--4942-- REDIR: 0x4019c00 (ld-linux-x86-64.so.2:index) redirected to 0x580c7eef (???)
+--4942-- Reading syms from /usr/libexec/valgrind/vgpreload_core-amd64-linux.so
+--4942-- Reading syms from /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so
+==4942== WARNING: new redirection conflicts with existing -- ignoring it
+--4942--     old: 0x04019e30 (strlen              ) R-> (0000.0) 0x580c7ed5 ???
+--4942--     new: 0x04019e30 (strlen              ) R-> (2007.0) 0x04c2d1b0 strlen
+--4942-- REDIR: 0x4019db0 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c2e300 (strcmp)
+--4942-- REDIR: 0x401aa70 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c31f90 (mempcpy)
+--4942-- Reading syms from /usr/lib64/libc-2.17.so
+--4942--   Considering /usr/lib/debug/.build-id/d7/8066a9c36f5fd63e2f6ac851ae3515c4c9792a.debug ..
+--4942--   .. build-id is valid
+--4942-- REDIR: 0x4ec7130 (libc.so.6:strcasecmp) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--4942-- REDIR: 0x4ec3eb0 (libc.so.6:strnlen) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--4942-- REDIR: 0x4ec9400 (libc.so.6:strncasecmp) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--4942-- REDIR: 0x4ec6910 (libc.so.6:memset) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--4942-- REDIR: 0x4ec68c0 (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--4942-- REDIR: 0x4ec58a0 (libc.so.6:__GI_strrchr) redirected to 0x4c2cb70 (__GI_strrchr)
+--4942-- REDIR: 0x4ebc6b0 (libc.so.6:malloc) redirected to 0x4c29eec (malloc)
+--4942-- REDIR: 0x4edc920 (libc.so.6:__GI_strstr) redirected to 0x4c32220 (__strstr_sse2)
+--4942-- REDIR: 0x4ecbb40 (libc.so.6:__GI_memcpy) redirected to 0x4c2efb0 (__GI_memcpy)
+--4942-- REDIR: 0x4ebcad0 (libc.so.6:free) redirected to 0x4c2afe6 (free)
+--4942-- REDIR: 0x4ec6ae0 (libc.so.6:__GI_mempcpy) redirected to 0x4c31cc0 (__GI_mempcpy)
+==4942== 
+==4942== HEAP SUMMARY:
+==4942==     in use at exit: 64 bytes in 10 blocks
+==4942==   total heap usage: 13 allocs, 3 frees, 1,224 bytes allocated
+==4942== 
+==4942== Searching for pointers to 10 not-freed blocks
+==4942== Checked 70,672 bytes
+==4942== 
+==4942== 4 bytes in 1 blocks are definitely lost in loss record 1 of 10
+==4942==    at 0x4C29F73: malloc (vg_replace_malloc.c:309)
+==4942==    by 0x400B6A: merge (hw09.c:194)
+==4942==    by 0x400DD2: mergeSort (hw09.c:276)
+==4942==    by 0x400DA6: mergeSort (hw09.c:274)
+==4942==    by 0x400DA6: mergeSort (hw09.c:274)
+==4942==    by 0x400825: main (main.c:42)
+==4942== 
+==4942== 4 bytes in 1 blocks are definitely lost in loss record 2 of 10
+==4942==    at 0x4C29F73: malloc (vg_replace_malloc.c:309)
+==4942==    by 0x400B7F: merge (hw09.c:195)
+==4942==    by 0x400DD2: mergeSort (hw09.c:276)
+==4942==    by 0x400DA6: mergeSort (hw09.c:274)
+==4942==    by 0x400DA6: mergeSort (hw09.c:274)
+==4942==    by 0x400825: main (main.c:42)
+==4942== 
+==4942== 4 bytes in 1 blocks are definitely lost in loss record 3 of 10
+==4942==    at 0x4C29F73: malloc (vg_replace_malloc.c:309)
+==4942==    by 0x400B7F: merge (hw09.c:195)
+==4942==    by 0x400DD2: mergeSort (hw09.c:276)
+==4942==    by 0x400DA6: mergeSort (hw09.c:274)
+==4942==    by 0x400825: main (main.c:42)
+==4942== 
+==4942== 4 bytes in 1 blocks are definitely lost in loss record 4 of 10
+==4942==    at 0x4C29F73: malloc (vg_replace_malloc.c:309)
+==4942==    by 0x400B6A: merge (hw09.c:194)
+==4942==    by 0x400DD2: mergeSort (hw09.c:276)
+==4942==    by 0x400DA6: mergeSort (hw09.c:274)
+==4942==    by 0x400DBD: mergeSort (hw09.c:275)
+==4942==    by 0x400825: main (main.c:42)
+==4942== 
+==4942== 4 bytes in 1 blocks are definitely lost in loss record 5 of 10
+==4942==    at 0x4C29F73: malloc (vg_replace_malloc.c:309)
+==4942==    by 0x400B7F: merge (hw09.c:195)
+==4942==    by 0x400DD2: mergeSort (hw09.c:276)
+==4942==    by 0x400DA6: mergeSort (hw09.c:274)
+==4942==    by 0x400DBD: mergeSort (hw09.c:275)
+==4942==    by 0x400825: main (main.c:42)
+==4942== 
+==4942== 4 bytes in 1 blocks are definitely lost in loss record 6 of 10
+==4942==    at 0x4C29F73: malloc (vg_replace_malloc.c:309)
+==4942==    by 0x400B7F: merge (hw09.c:195)
+==4942==    by 0x400DD2: mergeSort (hw09.c:276)
+==4942==    by 0x400DBD: mergeSort (hw09.c:275)
+==4942==    by 0x400825: main (main.c:42)
+==4942== 
+==4942== 8 bytes in 1 blocks are definitely lost in loss record 7 of 10
+==4942==    at 0x4C29F73: malloc (vg_replace_malloc.c:309)
+==4942==    by 0x400B6A: merge (hw09.c:194)
+==4942==    by 0x400DD2: mergeSort (hw09.c:276)
+==4942==    by 0x400DA6: mergeSort (hw09.c:274)
+==4942==    by 0x400825: main (main.c:42)
+==4942== 
+==4942== 8 bytes in 1 blocks are definitely lost in loss record 8 of 10
+==4942==    at 0x4C29F73: malloc (vg_replace_malloc.c:309)
+==4942==    by 0x400B6A: merge (hw09.c:194)
+==4942==    by 0x400DD2: mergeSort (hw09.c:276)
+==4942==    by 0x400DBD: mergeSort (hw09.c:275)
+==4942==    by 0x400825: main (main.c:42)
+==4942== 
+==4942== 12 bytes in 1 blocks are definitely lost in loss record 9 of 10
+==4942==    at 0x4C29F73: malloc (vg_replace_malloc.c:309)
+==4942==    by 0x400B6A: merge (hw09.c:194)
+==4942==    by 0x400DD2: mergeSort (hw09.c:276)
+==4942==    by 0x400825: main (main.c:42)
+==4942== 
+==4942== 12 bytes in 1 blocks are definitely lost in loss record 10 of 10
+==4942==    at 0x4C29F73: malloc (vg_replace_malloc.c:309)
+==4942==    by 0x400B7F: merge (hw09.c:195)
+==4942==    by 0x400DD2: mergeSort (hw09.c:276)
+==4942==    by 0x400825: main (main.c:42)
+==4942== 
+==4942== LEAK SUMMARY:
+==4942==    definitely lost: 64 bytes in 10 blocks
+==4942==    indirectly lost: 0 bytes in 0 blocks
+==4942==      possibly lost: 0 bytes in 0 blocks
+==4942==    still reachable: 0 bytes in 0 blocks
+==4942==         suppressed: 0 bytes in 0 blocks
+==4942== 
+==4942== ERROR SUMMARY: 10 errors from 10 contexts (suppressed: 0 from 0)
