@@ -1,0 +1,83 @@
+==3601== Memcheck, a memory error detector
+==3601== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3601== Using Valgrind-3.15.0-608cb11914-20190413 and LibVEX; rerun with -h for copyright info
+==3601== Command: ./hw13 inputs/test1
+==3601== Parent PID: 3600
+==3601== 
+--3601-- 
+--3601-- Valgrind options:
+--3601--    --tool=memcheck
+--3601--    --log-file=memcheck.txt
+--3601--    --leak-check=full
+--3601--    --verbose
+--3601-- Contents of /proc/version:
+--3601--   Linux version 3.10.0-1127.8.2.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-39) (GCC) ) #1 SMP Tue May 12 16:57:42 UTC 2020
+--3601-- 
+--3601-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand
+--3601-- Page sizes: currently 4096, max supported 4096
+--3601-- Valgrind library directory: /usr/libexec/valgrind
+--3601-- Reading syms from /home/shay/a/rkothand/Desktop/HW13/hw13
+--3601-- Reading syms from /usr/lib64/ld-2.17.so
+--3601--   Considering /usr/lib/debug/.build-id/27/ffd1fbc69569c776e666474eed723395e6d727.debug ..
+--3601--   .. build-id is valid
+--3601-- Reading syms from /usr/libexec/valgrind/memcheck-amd64-linux
+--3601--    object doesn't have a symbol table
+--3601--    object doesn't have a dynamic symbol table
+--3601-- Scheduler: using generic scheduler lock implementation.
+--3601-- Reading suppressions file: /usr/libexec/valgrind/default.supp
+==3601== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-3601-by-rkothand-on-ecegrid-thin7.ecn.purdue.edu
+==3601== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-3601-by-rkothand-on-ecegrid-thin7.ecn.purdue.edu
+==3601== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-3601-by-rkothand-on-ecegrid-thin7.ecn.purdue.edu
+==3601== 
+==3601== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==3601== don't want to do, unless you know exactly what you're doing,
+==3601== or are doing some strange experiment):
+==3601==   /usr/libexec/valgrind/../../bin/vgdb --pid=3601 ...command...
+==3601== 
+==3601== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==3601==   /path/to/gdb ./hw13
+==3601== and then give GDB the following command
+==3601==   target remote | /usr/libexec/valgrind/../../bin/vgdb --pid=3601
+==3601== --pid is optional if only one valgrind process is running
+==3601== 
+--3601-- REDIR: 0x4019e30 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c7ed5 (???)
+--3601-- REDIR: 0x4019c00 (ld-linux-x86-64.so.2:index) redirected to 0x580c7eef (???)
+--3601-- Reading syms from /usr/libexec/valgrind/vgpreload_core-amd64-linux.so
+--3601-- Reading syms from /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so
+==3601== WARNING: new redirection conflicts with existing -- ignoring it
+--3601--     old: 0x04019e30 (strlen              ) R-> (0000.0) 0x580c7ed5 ???
+--3601--     new: 0x04019e30 (strlen              ) R-> (2007.0) 0x04c2d1b0 strlen
+--3601-- REDIR: 0x4019db0 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c2e300 (strcmp)
+--3601-- REDIR: 0x401aa70 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c31f90 (mempcpy)
+--3601-- Reading syms from /usr/lib64/libc-2.17.so
+--3601--   Considering /usr/lib/debug/.build-id/d7/8066a9c36f5fd63e2f6ac851ae3515c4c9792a.debug ..
+--3601--   .. build-id is valid
+--3601-- REDIR: 0x4ec7130 (libc.so.6:strcasecmp) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--3601-- REDIR: 0x4ec3eb0 (libc.so.6:strnlen) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--3601-- REDIR: 0x4ec9400 (libc.so.6:strncasecmp) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--3601-- REDIR: 0x4ec6910 (libc.so.6:memset) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--3601-- REDIR: 0x4ec68c0 (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--3601-- REDIR: 0x4ec58a0 (libc.so.6:__GI_strrchr) redirected to 0x4c2cb70 (__GI_strrchr)
+--3601-- REDIR: 0x4ebc6b0 (libc.so.6:malloc) redirected to 0x4c29eec (malloc)
+--3601-- REDIR: 0x4edc920 (libc.so.6:__GI_strstr) redirected to 0x4c32220 (__strstr_sse2)
+--3601-- REDIR: 0x4ec5fa0 (libc.so.6:memchr) redirected to 0x4c2e3a0 (memchr)
+--3601-- REDIR: 0x4ecbb40 (libc.so.6:__GI_memcpy) redirected to 0x4c2efb0 (__GI_memcpy)
+--3601-- REDIR: 0x4ecd1b0 (libc.so.6:__GI___rawmemchr) redirected to 0x4c31b10 (__GI___rawmemchr)
+--3601-- REDIR: 0x4ec3d80 (libc.so.6:strlen) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--3601-- REDIR: 0x4fa6680 (libc.so.6:__strlen_sse2_pminub) redirected to 0x4c2d0f0 (strlen)
+--3601-- REDIR: 0x4ec37c0 (libc.so.6:strcpy) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--3601-- REDIR: 0x4ed16e0 (libc.so.6:__strcpy_sse2_unaligned) redirected to 0x4c2d1d0 (strcpy)
+--3601-- REDIR: 0x4ebcad0 (libc.so.6:free) redirected to 0x4c2afe6 (free)
+--3601-- REDIR: 0x4ec3dd0 (libc.so.6:__GI_strlen) redirected to 0x4c2d110 (__GI_strlen)
+--3601-- REDIR: 0x4ecd3c0 (libc.so.6:strchrnul) redirected to 0x4c31ab0 (strchrnul)
+--3601-- REDIR: 0x4ec6ae0 (libc.so.6:__GI_mempcpy) redirected to 0x4c31cc0 (__GI_mempcpy)
+--3601-- REDIR: 0x4ec2270 (libc.so.6:index) redirected to 0x4a247a0 (_vgnU_ifunc_wrapper)
+--3601-- REDIR: 0x4f75ce0 (libc.so.6:__strchr_sse42) redirected to 0x4c2cd60 (index)
+==3601== 
+==3601== HEAP SUMMARY:
+==3601==     in use at exit: 0 bytes in 0 blocks
+==3601==   total heap usage: 7 allocs, 7 frees, 744 bytes allocated
+==3601== 
+==3601== All heap blocks were freed -- no leaks are possible
+==3601== 
+==3601== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
