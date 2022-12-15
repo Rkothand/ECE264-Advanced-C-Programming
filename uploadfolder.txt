@@ -1,0 +1,3 @@
+scp -r HW14Arithmetic2 rkothand@ecegrid.ecn.purdue.edu:/home/shay/a/rkothand/Desktop/HW14
+
+scp rkothand@ecegrid.ecn.purdue.edu:/home/shay/a/rkothand/Desktop/HW#/# .
